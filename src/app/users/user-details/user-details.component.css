@@ -1,0 +1,16 @@
+
+.card{
+    text-align: center;
+    border: 1px solid #b40024;
+}
+.card-header{
+    text-align: center;
+    border-bottom: 1px solid #b40024;;
+}
+img{
+    border-radius: 50px;
+}
+div p, .card-header{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+}

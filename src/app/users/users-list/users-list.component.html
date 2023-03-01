@@ -1,0 +1,62 @@
+
+<app-nav></app-nav>
+<br>
+<div class="container">
+    <div class="card">
+    <br>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table" >
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>avatar</th>
+                            <th>user Name</th>
+                            <th>email</th>
+                            
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of users.data ">
+                            <td>{{user.id}}</td>
+                              <td><img 
+                                [src]="user.avatar"
+                                [title]="user.avatar"
+                                [style.width.px]="imgWidth"
+                                [style.margin.px]="imgMargin"/>
+                            </td>
+                            <td><a [routerLink]="['/user', user.id]">{{user.first_name}} {{user.last_name}}</a></td>
+                            <td> <a [routerLink]="['/user', user.id]">{{user.email}}</a></td>
+
+                          
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+               <nav aria-label="Page navigation example">
+                    <ul class="pagination" >
+                      <li class="page-item"  *ngFor="let item of [].constructor(users.total_pages); let i = index">
+                        <a class="page-link"  (click)="naviagtePage(i)" >{{i+1}}</a></li>
+                        <li>
+                            <a href=""></a>
+                        </li>
+                    </ul>
+                  </nav>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
