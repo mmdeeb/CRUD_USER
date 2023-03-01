@@ -1,30 +1,27 @@
-
-<app-nav></app-nav>
-
-    <br>
+<div class="container">
     <div class="row">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4">
-        <div class="card">
-            <h5 class="card-header">{{userDetails.data.first_name}} Details</h5>
+        <div class="col-md-12">
 
-            <div class="card-body">
-               
-                <img 
-                [src]="userDetails.data.avatar"
-                [title]="userDetails.data.avatar"
-                [style.width.px]="imgWidth"
-                [style.margin.px]="imgMargin"/>
-                <br><br>
-                <p>User Id : {{userDetails.data.id }} </p>
-                <p>User Name : {{userDetails.data.first_name}} {{userDetails.data.last_name}} </p>
-                <p>User Email : {{userDetails.data.email}} </p>
-            <button type="button" class="btn btn-danger" (click)="onBack()">back</button>  
-            </div>
-    </div>
+            <h1 class="text-center my-4">User Details</h1>
+
         </div>
-    <div class="col-sm-4"></div></div>
-    
+        <hr>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <img [src]="userDetails.data.avatar" class="img-fluid mb-3">
+        </div>
+        <div class="col-md-8">
 
+            <h3>Name: {{ userDetails.data.first_name }} {{ userDetails.data.last_name }}</h3>
+            <h3>ID: {{ userDetails.data.id }}</h3>
+            <p>Email: {{ userDetails.data.email }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center mt-4">
+            <button routerLink="/users" class="btn btn-outline-light" class="btn btn-outline-dark">Back</button>
+        </div>
+    </div>
 
-    
+</div>

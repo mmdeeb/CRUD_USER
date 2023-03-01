@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {  ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { IUser } from './IUser';
 
 import { UserService } from './user.service';
 
@@ -21,13 +22,11 @@ export class UsersListComponent implements OnInit{
   ngOnInit(): void{
     this. getUsers();
   }
+
   getUsers():void{
     this.sub = this.userService.getUser().subscribe({
       next: users => {console.log(users);
       this.users = users;
-      
-      
-      //this.pages= Array(5).fill().map((x,i)=>i);
       }    
       });
   }

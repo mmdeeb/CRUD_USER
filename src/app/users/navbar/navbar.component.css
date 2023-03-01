@@ -1,12 +1,15 @@
-
-
-nav a, button{
-    font-family:'Franklin Gothic Medium';
-
-    margin-left: 10px ;
+h1 {
+    margin-left: 1%;
+    font-size: 25px;
+    font-weight: bold;
 }
 
-button{
-    
+nav a,
+button {
+    font-family: 'Franklin Gothic Medium';
+    margin-left: 10px;
+}
+
+button {
     margin-right: 20px;
 }

@@ -9,21 +9,14 @@ import { IUserDetails } from './IUserDetails';
 })
 export class UserDetailsService {
 
-  private id:any;
-  private Url:any ;
-  constructor(private http: HttpClient, private Arout:ActivatedRoute) {
-  }
-
+  private id: any;
+  private Url: any;
+  constructor(private http: HttpClient, private Arout: ActivatedRoute) {}
 
   getUser(): Observable<IUserDetails> {
-   this.id= this.Arout.snapshot.paramMap.get('id')
+    this.id = this.Arout.snapshot.paramMap.get('id')
     this.Url = `https://reqres.in/api/users/${window.location.href.split("/")[4]}`;
- return this.http.get<IUserDetails>(this.Url);
-}
-
-  // getUser(): Observable<IUserDetails> {
-  //   this.id= this.Arout.snapshot.paramMap.get('id')
-  //   this.Url = `https://reqres.in/api/users/${this.id}`;
-  //   return this.http.get<IUserDetails>(this.Url);
+    return this.http.get<IUserDetails>(this.Url);
+  }
 
 }

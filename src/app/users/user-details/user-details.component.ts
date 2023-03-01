@@ -9,28 +9,26 @@ import { UserDetailsService } from './user-details.service';
   styleUrls: ['./user-details.component.css']
 })
 export class UserDetailsComponent implements OnInit {
-  userDetails :any ;
+  userDetails: any;
   sub!: Subscription;
-  imgWidth : number = 100;
-  imgMargin : number = 2;
-  title : string = "id : "
-  
-  constructor(private userdetailsService:UserDetailsService 
-    ,private _Router :Router, private Arout:ActivatedRoute){}
+  imgWidth: number = 100;
+  imgMargin: number = 2;
+  title: string = "id : "
 
-  ngOnInit(): void{
+  constructor(private userdetailsService: UserDetailsService
+    , private _Router: Router, private Arout: ActivatedRoute) { }
+
+  ngOnInit(): void {
     this.sub = this.userdetailsService.getUser().subscribe({
-    next: userditails => {console.log(userditails);
-    this.userDetails = userditails;
-    console.log(userditails)
-    }    
+      next: userditails => {
+        console.log(userditails);
+        this.userDetails = userditails;
+        console.log(userditails)
+      }
     });
     this.title += this.Arout.snapshot.paramMap.get('id');
   }
   ngOnDestroy(): void {
     this.sub.unsubscribe();
-  }
-  onBack(){
-    this._Router.navigate(['users'])
   }
 }

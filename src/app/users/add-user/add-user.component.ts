@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AddUserService } from './add-user.service';
 import { IAddUser } from './IAddUser';
@@ -8,25 +9,22 @@ import { IAddUser } from './IAddUser';
   templateUrl: './add-user.component.html',
   styleUrls: ['./add-user.component.css']
 })
-export class AddUserComponent implements OnInit {
-  body:IAddUser[]=[];
+export class AddUserComponent {
   
-  constructor(private adduserservice:AddUserService){}
-  ngOnInit(): void {
+  adduser:IAddUser[]=[];
+
+  constructor(private adduserservice:AddUserService,private router:Router){}
   
-  }
   saveUser(){
-
-
-      this.adduserservice.addUser(this.body).subscribe({
+      this.adduserservice.addUser(this.adduser).subscribe({
         next: response => {
-          console.log(response);
-                
+          console.log(response);     
         },
         error: error => console.log(error)
       })
-
     }
-  
 
+    cancel(){
+      this.router.navigate(['users'])
+    }
 }

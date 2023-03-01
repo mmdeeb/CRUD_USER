@@ -1,8 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-  <a class="navbar-brand" [routerLink]="['../users']">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  
+  <h1 class="navbar-brand">
     User Managment
-  </a>
+  </h1>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -12,23 +13,13 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/adduser']">Add User</a>
       </li>
-      <li class="nav-item">
-
-        <input class="form-control mr-sm-2" type="search" placeholder="Write user name">
-
-
-      </li>
-      <li class="nav-item">
-
-        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-
-      </li>
     </ul>
 
   </div>
   <button type="button" class="btn btn-outline-light" (click)="logout()">
     Logout
     <i class="fa-solid fa-right-from-bracket"></i></button>
-  <!--Log-->
-
+  
 </nav>
+
+

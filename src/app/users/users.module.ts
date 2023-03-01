@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
+
 
 
 
@@ -19,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     UserDetailsComponent,
     AddUserComponent,
     NavbarComponent,
+    FooterComponent
    
    
   ],
@@ -28,11 +31,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
 
     ReactiveFormsModule,
-    RouterModule.forChild([  
+    RouterModule.forChild([ 
       {path:'users' , component:UsersListComponent},    
       {path:'users/:id' , component:UsersListComponent}, 
       {path: 'user/:id',component:UserDetailsComponent},
       {path: 'adduser',component:AddUserComponent},
+      
+      
       
     ])
   ],
